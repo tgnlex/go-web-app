@@ -3,6 +3,7 @@ package handlers
 import (
 	"fmt"
 	"html/template"
+	"io"
 	"net/http"
 )
 
@@ -15,7 +16,7 @@ func IndexHandle(w http.ResponseWriter, r *http.Request) {
 func FormHandle(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
-	fmt.Printf("%s: got /hello request \n"ctx.Value())
+	fmt.Printf("%s: got /hello request \n", ctx.Value)
 
 	val := r.PostFormValue("val")
 	if val == "" {
