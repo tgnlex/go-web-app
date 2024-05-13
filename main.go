@@ -6,17 +6,10 @@ import (
 	"os"
 
 	"example.com/project/handlers"
-	"example.com/project/lib"
+	"example.com/project/utils"
 )
 
-// Aliases
-var Handle = http.HandleFunc
-var Env = os.Getenv
-var Print = fmt.Printf
-
-// Lib
-var LoadEnv = lib.LoadEnv
-var Server = lib.Server
+var LoadEnv = utils.LoadEnv
 
 // Handles
 var Index = handlers.IndexHandle
@@ -32,3 +25,4 @@ func Main() {
 	// Start Server
 	Server(PORT)
 }
+
